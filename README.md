@@ -6,6 +6,7 @@ jdk 8
 spring boot 2.6.2
 spring security
 jpa
+Jsaypt
 mariaDB --예정
 swagger --예정
 
