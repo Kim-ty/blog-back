@@ -1,6 +1,16 @@
 package com.gabekim.domain.posts.service;
 
-// 비즈니스로직처리
-public class PostsService {
+import java.util.ArrayList;
+
+public interface PostsService {
     
+  public ArrayList getPosts();
+
+  public Integer postPosts();
+
+  public String putPosts();
+
+  public Integer deletePosts();
+
+
 }

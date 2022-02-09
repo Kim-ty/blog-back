@@ -3,9 +3,10 @@ import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.PropertySource;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 @PropertySource(value={"classpath:/dbinfo.properties"})
 @PropertySource(value={"classpath:/systeminfo.properties"})
 public class Application implements CommandLineRunner {
