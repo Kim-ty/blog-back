@@ -1,14 +1,19 @@
 package com.gabekim.domain.posts.dto;
 
 import java.sql.Date;
-import java.util.ArrayList;
 
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class PostsDto {
 
-  public String title;
-  public ArrayList<String> tagList;
-  public String info;
-  public Date regDate;
+  private String title; //제목
+  private int category;//카테고리
+  private String info; //정보
+  private String[] tagList; //태그
+  private Date regDate; //날짜
+  private String thumbnail; //썸네일
 
 }

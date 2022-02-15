@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //controller
 @RestController
-@RequestMapping(value="/posts")
+@RequestMapping(value="/Posts")
 public class PostsController {
 
     @RequestMapping(method = RequestMethod.GET)
