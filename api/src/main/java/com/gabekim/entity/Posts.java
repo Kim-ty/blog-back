@@ -1,5 +1,6 @@
 package com.gabekim.entity;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +40,8 @@ public class Posts {
     private String postsInfo;
 
 
-    private String regDate;
-    private String modifyDate;
+    private Date regDate;
+    private Date modifyDate;
 
     @Column(nullable=false)
     private int categoryNo;

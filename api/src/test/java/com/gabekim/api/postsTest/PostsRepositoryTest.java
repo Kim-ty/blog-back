@@ -1,4 +1,4 @@
-package com.gabekim.api;
+package com.gabekim.api.postsTest;
 
 import java.util.ArrayList;
 import java.util.List;

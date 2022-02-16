@@ -1,18 +1,18 @@
 package com.gabekim.domain.posts.service;
 
-import java.util.ArrayList;
-
 import com.gabekim.domain.posts.dto.PostsDto;
+
+import org.springframework.data.domain.Slice;
 
 public interface PostsService {
     
-  public ArrayList<PostsDto> getPosts();
+  public Slice<PostsDto> getPosts(PostsDto postsDto);
 
-  public Integer postPosts();
+  public Integer postPosts(PostsDto postsDto);
 
-  public String putPosts();
+  public String putPosts(PostsDto postsDto);
 
-  public Integer deletePosts();
+  public Integer deletePosts(int postsNo);
 
 
 }
