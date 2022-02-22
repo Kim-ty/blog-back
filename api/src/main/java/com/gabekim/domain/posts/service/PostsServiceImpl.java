@@ -34,7 +34,7 @@ public class PostsServiceImpl implements PostsService{
   @Override
   public Slice<PostsDto> getPosts(PostsDto postsDto) {
 
-    Direction direction = postsDto.getOrder() == "asc" ? Direction.DESC:Direction.ASC;
+    Direction direction = postsDto.getOrder().equals("asc")  ? Direction.DESC:Direction.ASC;
 
     Sort sort = Sort.by(direction, postsDto.getField());
 
@@ -60,11 +60,11 @@ public class PostsServiceImpl implements PostsService{
   
       List<Tag> tagEntityList = new ArrayList<Tag>() {
         {
-        for(String tag:tagList){
-          Tag tagItem = Tag.builder().postsNo(resultPost.getPostsNo()).tagName(tag).build();
-          add(tagItem);
+          for(String tag:tagList){
+            Tag tagItem = Tag.builder().postsNo(resultPost.getPostsNo()).tagName(tag).build();
+            add(tagItem);
+          }
         }
-      }
       };
       
       tagRepository.saveAll(tagEntityList);

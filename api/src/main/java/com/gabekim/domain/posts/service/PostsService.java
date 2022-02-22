@@ -3,9 +3,11 @@ package com.gabekim.domain.posts.service;
 import com.gabekim.domain.posts.dto.PostsDto;
 
 import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface PostsService {
-    
+
   public Slice<PostsDto> getPosts(PostsDto postsDto);
 
   public Integer postPosts(PostsDto postsDto);

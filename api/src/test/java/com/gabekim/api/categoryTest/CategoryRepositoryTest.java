@@ -1,4 +1,4 @@
-package com.gabekim.api;
+package com.gabekim.api.categoryTest;
 
 import java.util.List;
 import java.util.function.Consumer;

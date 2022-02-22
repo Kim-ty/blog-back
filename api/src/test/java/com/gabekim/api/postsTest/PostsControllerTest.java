@@ -1,36 +1,39 @@
 package com.gabekim.api.postsTest;
 
-import com.gabekim.domain.posts.controller.PostsController;
+
+import com.gabekim.api.common.MockTestBuilder;
 import com.gabekim.domain.posts.dto.PostsDto;
-import com.gabekim.domain.posts.service.PostsService;
-
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Slice;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
-@ExtendWith(SpringExtension.class)
-@WebMvcTest(PostsController.class)
+import java.util.Map;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest
+@AutoConfigureMockMvc
 public class PostsControllerTest {
 
-  private MockMvc mvc;
+    @Autowired(required = true)
+    private MockMvc mvc;
 
-  @MockBean private PostsService postsService;
+   @Test
+   public void getPosts() throws Exception{
 
+    PostsDto postsDto = new PostsDto();
 
-  // @Test
-  // public void getPosts(){
+    postsDto.setPage(1);
+    postsDto.setSize(6);
 
-  //   PostsDto postsDto = new PostsDto();
+    MockHttpServletRequestBuilder req = new MockTestBuilder<PostsDto>().get("/posts",postsDto);
 
-  //   Slice<PostsDto> response =  postsController.getPosts(postsDto);
+    mvc.perform(req).andExpect(status().isOk()).andDo(print());
 
-  //   System.out.println(response);
-
-  // }
+   }
 
 }
