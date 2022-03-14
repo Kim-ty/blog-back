@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //controller
 @RestController
-@RequestMapping(value="/posts")
+@RequestMapping(value="/api/posts")
 public class PostsController {
 
     @Autowired

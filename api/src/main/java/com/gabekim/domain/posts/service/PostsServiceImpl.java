@@ -54,7 +54,7 @@ public class PostsServiceImpl implements PostsService{
       
       List<String> tagList = postsDto.getTagList();
       
-      Posts post = Posts.builder().title(postsDto.getTitle()).postsInfo(postsDto.getInfo()).categoryNo(postsDto.getCategory()).build();
+      Posts post = Posts.builder().title(postsDto.getTitle()).detail(postsDto.getInfo()).categoryNo(postsDto.getCategory()).build();
   
       Posts resultPost = postsRepository.save(post);
   

@@ -26,8 +26,8 @@ public class Posts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int postsNo;
 
-    private String thumbnail;
-
+    @Column
+    private String thumbNail;
 
     @OneToMany
     @JoinColumn(name = "postsNo")
@@ -37,19 +37,28 @@ public class Posts {
     private String title;
 
     @Column(nullable=false)
-    private String postsInfo;
+    private String detail;
+
+    @Column
+    private String thumbName;
 
 
+    @Column
     private Date regDate;
+
+    @Column
     private Date modifyDate;
 
     @Column(nullable=false)
     private int categoryNo;
 
+    @Column
+    private int enable;
+
     @Builder
-    public Posts(String title,String postsInfo,int categoryNo){
+    public Posts(String title,String detail,int categoryNo){
       this.title = title;
-      this.postsInfo = postsInfo;
+      this.detail = detail;
       this.categoryNo = categoryNo;
     };
 

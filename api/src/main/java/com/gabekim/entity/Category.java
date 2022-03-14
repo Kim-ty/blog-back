@@ -10,6 +10,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Getter
 @Entity
 @NoArgsConstructor
@@ -17,25 +19,28 @@ public class Category {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer categoryNo;
-
-    @Column(nullable = false)
-    private Integer categoryType;
+    private int categoryNo;
 
     @Column(columnDefinition = "TEXT")
-    private String categoryName;
+    private String title;
 
     @Column
-    private Integer parentsNo;
+    private int parentsNo;
 
     @Column
-    private Integer categoryOrder;
+    private int categoryOrder;
+
+    @Column
+    private Date regDate;
+
+    @Column
+    private int enable;
 
     @Builder
-    public Category(Integer categoryType,String categoryName,int parentsNo){
-        this.categoryType = categoryType;
-        this.categoryName = categoryName;
+    public Category(String title,int parentsNo,int categoryOrder){
+        this.title = title;
         this.parentsNo = parentsNo;
+        this.categoryOrder = categoryOrder;
     }
 
 }

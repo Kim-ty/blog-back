@@ -30,7 +30,7 @@ public class CategoryRepositoryTest {
     categoryList.forEach(new Consumer<Category>() {
       @Override
       public void accept(Category t) {
-        System.out.println(t.getCategoryName());
+        System.out.println(t.getTitle());
       }
       
     });

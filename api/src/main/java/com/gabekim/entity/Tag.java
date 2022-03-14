@@ -10,6 +10,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Getter
 @Entity
 @NoArgsConstructor
@@ -20,14 +22,17 @@ public class Tag {
   private int tagNo;
 
   @Column
-  private String tagName;
+  private String name;
 
   @Column(nullable = false)
   private int postsNo;
 
+  @Column
+  private Date regDate;
+
   @Builder
   public Tag(String tagName,int postsNo){
-    this.tagName = tagName;
+    this.name = tagName;
     this.postsNo = postsNo;
   }
 

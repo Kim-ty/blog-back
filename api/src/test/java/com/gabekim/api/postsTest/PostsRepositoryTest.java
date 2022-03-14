@@ -57,9 +57,8 @@ public class PostsRepositoryTest {
   public void postPosts(){
 
     String[] tagList = {"insert","test","repository"};
-    // "insertTest","insert test 본문입니다.",6
-    
-    Posts post = Posts.builder().title("insert").postsInfo("insert test 본문입니다.").categoryNo(6).build();
+
+    Posts post = Posts.builder().title("insert").detail("insert test 본문입니다.").categoryNo(6).build();
 
     Posts resultPost = postsRepository.save(post);
 
@@ -74,9 +73,6 @@ public class PostsRepositoryTest {
     
 
     List<Tag> tagResultList = tagRepository.saveAll(tagEntityList);
-
-    System.out.println(resultPost.toString());
-    System.out.println(tagResultList.toString());
 
 
   }
